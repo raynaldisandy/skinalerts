@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
+import 'History.dart';
+import 'home.dart';
+import 'Team.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
+  @override
+  _ProfilePageState createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+  int _indexNavbar = 2;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,6 +85,45 @@ class ProfilePage extends StatelessWidget {
               SizedBox(height: 40), // Add some space at the bottom
             ],
           ),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: 110, // Atur tinggi sesuai kebutuhan untuk menghindari overflow
+        child: FloatingNavbar(
+          onTap: (int val) {
+            setState(() => _indexNavbar = val);
+            if (val == 0) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MyHomePage()),
+              );
+            } else if (val == 1) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Historypage()),
+              );
+            } else if (val == 2) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProfilePage()),
+              );
+            } else if (val == 3) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProjectTeamPage()),
+              );
+            }
+          },
+          currentIndex: _indexNavbar,
+          backgroundColor: Color(0xFF5C715E),
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Color(0xFFF2F9F1),
+          items: [
+            FloatingNavbarItem(icon: Icons.home),
+            FloatingNavbarItem(icon: Icons.history),
+            FloatingNavbarItem(icon: Icons.person_outline),
+            FloatingNavbarItem(icon: Icons.info_outline),
+          ],
         ),
       ),
     );
