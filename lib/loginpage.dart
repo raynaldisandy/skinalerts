@@ -105,7 +105,7 @@ class _LoginPageState extends State<LoginPage> {
                       obscureText: !_showPassword,
                       decoration: InputDecoration(
                         labelText: 'Password',
-                        labelStyle: TextStyle(color: Color(0xFFF1F8E8)),
+                        labelStyle: TextStyle(color: Color(0xFFF2F9F1)),
                         border: InputBorder.none,
                         contentPadding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 14.0),
                         suffixIcon: IconButton(
