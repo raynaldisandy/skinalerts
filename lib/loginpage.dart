@@ -128,21 +128,6 @@ class _LoginPageState extends State<LoginPage> {
                       },
                     ),
                   ),
-                  SizedBox(height: 16),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Forget Password',
-                        style: TextStyle(
-                          fontFamily: 'LeagueSpartan',
-                          fontSize: 16,
-                          color: Color(0xFF5C715E),
-                        ),
-                      ),
-                    ),
-                  ),
                   SizedBox(height: 32),
                   ElevatedButton(
                     onPressed: () {
